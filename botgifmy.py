@@ -11,7 +11,7 @@ GIF_PATH = 'countdown.gif'
 # Функция для создания клавиатуры с кнопкой
 def create_start_timer_keyboard():
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
-    start_button = KeyboardButton('/start_timer')
+    start_button = KeyboardButton('Start Timer')
     keyboard.add(start_button)
     return keyboard
 
@@ -21,7 +21,7 @@ def send_welcome(message):
     welcome_text = "Нажмите кнопку ниже, чтобы запустить таймер:"
     bot.send_message(chat_id, welcome_text, reply_markup=create_start_timer_keyboard())
 
-@bot.message_handler(commands=['start_timer'])
+@bot.message_handler(func=lambda message: message.text == "Start Timer")
 def start_timer(message):
     chat_id = message.chat.id
     with open(GIF_PATH, 'rb') as gif_file:

@@ -41,8 +41,8 @@ def generate_countdown_gif(duration=120, step=1, output_path='countdown.gif'):
         frame.save(frame_path)
         frame_paths.append(frame_path)
 
-    # Создаем GIF из кадров
-    clip = ImageSequenceClip(frame_paths, fps=1 / step)
+    # Создаем GIF из кадров с правильным fps
+    clip = ImageSequenceClip(frame_paths, fps=1)  # 1 кадр в секунду
     clip.write_gif(output_path)
 
     # Удаляем временные файлы
@@ -53,4 +53,5 @@ def generate_countdown_gif(duration=120, step=1, output_path='countdown.gif'):
 
 # Генерируем GIF с обратным отсчетом
 generate_countdown_gif()
+
 

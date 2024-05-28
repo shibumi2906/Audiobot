@@ -2,7 +2,7 @@ import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
 # Вставьте ваш токен от Telegram Bot API
-TOKEN = '6593004563:AAF6_VdpPQKQ-hYjsAcrz6GBwuVnx_CPwFc'
+TOKEN = 'my token'
 bot = telebot.TeleBot(TOKEN)
 
 # Путь к созданному GIF-файлу
